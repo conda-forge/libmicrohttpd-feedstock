@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: libmicrohttpd
-  version: 1.0.2
+  version: "1.0.4"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-${{ version }}.tar.gz
-  sha256: df324fcd0834175dab07483133902d9774a605bfa298025f69883288fd20a8c7
+  sha256: d72e5cfccd62bf2f79252edbc3828eeedc088ce71fc47b7c9e3bd7246b3d54de
 
 build:
   number: 0
@@ -31,10 +31,9 @@ requirements:
 tests:
   - script:
       - if: unix
-        then: test -f $PREFIX/lib/libmicrohttpd${SHLIB_EXT}
-      - if: unix
-        then: test -f $PREFIX/include/microhttpd.h
-
+        then:
+          - test -f $PREFIX/lib/libmicrohttpd${SHLIB_EXT}
+          - test -f $PREFIX/include/microhttpd.h
 about:
   license: LGPL-2.0-or-later
   license_file: COPYING
