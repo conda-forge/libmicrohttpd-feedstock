@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: libmicrohttpd
-  version: "1.0.10"
+  version: "1.0.11"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-${{ version }}.tar.gz
-  sha256: 04bfe8ef75db7d629a33de767599765cecadc56274a39822d5d081030d577685
+  sha256: f227a044b75688e449b58ddedf0582255cc562899ff69f173a8ef76439744b4e
 
 build:
   number: 0
